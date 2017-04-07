@@ -17,11 +17,6 @@ function Order(name,number){
   this.pizzas= [];
 }
 
-Order.prototype.totalprice = function(){
-  var totalprice  = 0;
-
-}
-
 
 //UserInterface Logic
 $(document).ready(function(){
@@ -89,7 +84,9 @@ $(document).ready(function(){
 
 
     $("#add-name").text(newOrder.name);
-    $("#price").text(newOrder.pizza());
+    $("#price").text(pizza.price());
+    $("#orderform").hide();
+    $("h1").replaceWith("<h1>Order Confirmation</h1>");
     $("#output, #delivery-option").show();
     $("#order").show();
 
@@ -98,7 +95,9 @@ $(document).ready(function(){
 
   $("#yes-deliver").click(function(){
     $("#output, #delivery-option").hide();
+    $("h1").replaceWith("<h1>Address Information</h1>");
     $("#address").show();
+
 
   });
 
@@ -112,6 +111,7 @@ $(document).ready(function(){
     $("#push-address").text(inputAddress);
     $("#delivery").show();
     $("#address").hide();
+    $("#new-order-button").show();
   });
 
   $("button#no-deliver").click(function(){
