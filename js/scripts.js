@@ -17,9 +17,10 @@ function Order(name,number){
   this.pizzas= [];
 }
 
-// Order.prototype.totalprice = function(){
-//   var totalprice  = this.pizzas;
-// }
+Order.prototype.totalprice = function(){
+  var totalprice  = 0;
+
+}
 
 
 //UserInterface Logic
@@ -71,24 +72,15 @@ $(document).ready(function(){
                                '</div>' +
                              '</div>');
 
-   });
 
+   });
 
   $("#orderform").submit(function(event){
     event.preventDefault();
     var inputName = $("#name").val();
     var inputNumber = $("#number").val();
     var newOrder = new Order(inputName,inputNumber);
-    //
-    // $(".new-order").each(function() {
-    // var topping1 = parseFloat($(this).find(".topping1").val());
-    // var topping2 = parseFloat($(this).find(".topping2").val());
-    // var topping3 = parseFloat($(this).find(".topping3").val());
-    // var size = parseFloat($(this).find(".size").val());
-    // var newPizza = new Pizza(topping1, topping2, topping3, size);
-    // console.log(newOrder.pizzas.push(newPizza));
-    // });
-    //
+
     var topping1 = parseFloat($(".topping1").val());
     var topping2 = parseFloat($(".topping2").val());
     var topping3 = parseFloat($(".topping3").val());
@@ -97,13 +89,13 @@ $(document).ready(function(){
 
 
     $("#add-name").text(newOrder.name);
-    $("#price").text(pizza.price());
+    $("#price").text(newOrder.pizza());
     $("#output, #delivery-option").show();
     $("#order").show();
 
-  });
+   });
 
-  
+
   $("#yes-deliver").click(function(){
     $("#output, #delivery-option").hide();
     $("#address").show();
