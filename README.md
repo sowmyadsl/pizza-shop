@@ -20,15 +20,12 @@ A Pizza ordering Web Application that lets the user input name,phone number and 
 | Program has 3 size options for the user to choose from and has a value set for each    |  8inch (S): $5 , 12inch (M): $10 , 14inch(L): $15 |  N/A |
 |  Program lets user order to make a custom pizza by choosing the toppings and size of the pizza and give a final price    |   for eg: If user chooses toppings:"cheese","pepperoni", "mushrooms" and size "12 inch (M) size" and clicks on the order   |  Total price: $13.75    |
 | Program lets the user choose a delivery option | For eg: Home delivery or pickup |    N/A |
-
-
-
+| Program lets the user create another order by clicking on the new order button | N/A  | N/A |
 
 
 ## Setup/Installation Requirements
 
-* Open the github link :
-* Or , git clone the repository and open index.html file on a browser.
+* git clone the repository and open index.html file on a browser.
 
 ## Known Bugs
 

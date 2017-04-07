@@ -4,152 +4,173 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-  	<script src="js/jquery-3.2.0.js">
-  	</script>
-  	<script src="js/scripts.js">
-  	</script>
+    <script src="js/jquery-3.2.0.js">
+    </script>
+    <script src="js/scripts.js">
+    </script>
     <title>Pizza Order form</title>
   </head>
-  <body>
-    <div class="jumbotron">
-      <h1> Pepe's Pizzaria </h1>
-    </div>
-
-    <!-- begin class container -->
-    <div class="container">
+<body>
+  <div class="jumbotron">
+    <h1>Pepe's Pizzaria</h1>
+  </div><!-- begin class container -->
+  <div class="container">
     <!-- begin row -->
-      <div class="row">
-    <div class="column col-sm-8 col-sm-offset-2">
-     <h1>Order a Pizza</h1>
-     <form id="orderform">
-       <h4>Contact Information:</h4>
-       <div class="form-group">
-         <label for="name">Name:</label>
-         <input required class="form-control" id="name" type="text" name="name" placeholder="Enter your name">
-       </div>
-       <div class="form-group">
-         <label for="number">Phone number:</label>
-         <input required class="form-control" id="number" type="tel" name="number" placeholder="Enter your phone number">
-       </div>
-       <div class="new-order">
-         <h4>Choose upto 3 toppings:</h4>
-         <div class="form-group">
-           <label for="toppings">Topping 1: </label>
-           <select required class="form-control topping1">
-             <option disabled selected="true" value="">Please Select one:</option>
-             <option value="1">Cheese</option>
-             <option value="1.5">Onions</option>
-             <option value="1.75">Olives</option>
-             <option value="1.25">Mushrooms</option>
-             <option value="2">Artichokes</option>
-           </select>
-         </div>
-         <div class="form-group">
-            <label for="toppings">Topping 2:</label>
-            <select class="form-control topping2">
-              <option selected="true" value="0">Please select one:</option>
-              <option value="1">Cheese</option>
-              <option value="1.5">Onions</option>
-              <option value="1.75">Tomatoes</option>
-              <option value="1.25">Mushrooms</option>
-              <option value="2">Artichokes</option>
-            </select>
+    <div class="row">
+      <div class="column col-sm-8 col-sm-offset-2">
+        <h1>Order a Pizza</h1>
+        <form id="orderform" name="orderform">
+          <h4>Contact Information:</h4>
+          <div class="form-group">
+            <label for="name">Name:</label> <input class="form-control" id="name" name="name" placeholder="Enter your name" required="" type="text">
           </div>
           <div class="form-group">
-            <label for="toppings">Topping 3:</label>
-            <select class="form-control topping3">
-              <option selected="true" value="0">Please select one:</option>
-              <option value="1">Cheese</option>
-              <option value="1.5">Onions</option>
-              <option value="1.75">Olives</option>
-              <option value="1.25">Red peppers</option>
-              <option value="2">Artichokes</option>
-            </select>
+            <label for="number">Phone number:</label> <input class="form-control" id="number" name="number" placeholder="Enter your phone number" required="" type="tel">
           </div>
-          <h4>Choose a size:</h4>
-         <div class="form-group">
-           <select required class="form-control size">
-             <option disabled selected="true" value="">Please select one:</option>
-             <option value="5">Small (10 inches)</option>
-             <option value="10">Medium (12 inches)</option>
-             <option value="15">Large (14 inches)</option>
-           </select>
-         </div>
-       </div>
-       <div id="add-order">
-       </div>
-       <div class="button-div">
-         <button class="btn btn-default" id="add-button"type="button">Add Another Pizza</button>
-         <button class="btn btn-primary" type="submit">Place Order</button>
-       </div>
-     </form>
-
-        <!-- end of row -->
-      <div>
-      <!-- end of container -->
-    </div>
-
-
-    <div id="output">
-        <h3>Thank you for your order, <span id="add-name"></span>!</h3>
-        <h3>Your total is $<span id="price"></span></h3>
-        <div id="delivery-option">
-          <h5>We offer free delivery. Would you like us to deliver to you?</h5>
-          <button class="btn btn-success" type="button" id="yes-deliver">Yes, please deliver!</button>
-          <button class="btn btn-danger" type="button" id="no-deliver">No, thank you.</button>
+          <div class="new-order">
+            <h4>Choose upto 3 toppings:</h4>
+            <div class="form-group">
+              <label for="toppings">Topping 1:</label> <select class="form-control topping1" required="">
+                <option disabled selected="true" value="">
+                  Please Select one:
+                </option>
+                <option value="1">
+                  Cheese
+                </option>
+                <option value="1.5">
+                  Onions
+                </option>
+                <option value="1.75">
+                  Olives
+                </option>
+                <option value="1.25">
+                  Mushrooms
+                </option>
+                <option value="2">
+                  Artichokes
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="toppings">Topping 2:</label> <select class="form-control topping2">
+                <option selected="true" value="0">
+                  Please select one:
+                </option>
+                <option value="1">
+                  Cheese
+                </option>
+                <option value="1.5">
+                  Onions
+                </option>
+                <option value="1.75">
+                  Tomatoes
+                </option>
+                <option value="1.25">
+                  Mushrooms
+                </option>
+                <option value="2">
+                  Artichokes
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="toppings">Topping 3:</label> <select class="form-control topping3">
+                <option selected="true" value="0">
+                  Please select one:
+                </option>
+                <option value="1">
+                  Cheese
+                </option>
+                <option value="1.5">
+                  Onions
+                </option>
+                <option value="1.75">
+                  Olives
+                </option>
+                <option value="1.25">
+                  Red peppers
+                </option>
+                <option value="2">
+                  Artichokes
+                </option>
+              </select>
+            </div>
+            <h4>Choose a size:</h4>
+            <div class="form-group">
+              <select class="form-control size" required="">
+                <option disabled selected="true" value="">
+                  Please select one:
+                </option>
+                <option value="5">
+                  Small (10 inches)
+                </option>
+                <option value="10">
+                  Medium (12 inches)
+                </option>
+                <option value="15">
+                  Large (14 inches)
+                </option>
+              </select>
+            </div>
+          </div>
+          <div id="add-order"></div>
+          <div class="button-div">
+            <button class="btn btn-default" id="add-button" type="button">Add Another Pizza</button> <button class="btn btn-primary" type="submit">Place Order</button>
+          </div>
+        </form><!-- end of row -->
+        <div>
+          <!-- end of container -->
         </div>
-      </div>
-      <form id="address">
-        <h4>Enter delivery address information:</h4>
-        <div class="form-group">
-          <label for="street">Street:</label>
-          <input id="street" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="city">City:</label>
-          <input id="city" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="state">State:</label>
-          <input id="state" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="zipcode">Zipcode:</label>
-          <input id="zipcode" type="number" class="form-control">
-        </div>
-        <div class="button-div">
-          <button class="btn btn-primary" type="submit" name="button">Submit</button>
-        </div>
-      </form>
-      <div id="pick-up">
-        <h5>Your order will be ready in 30 minutes. We look forward to seeing you!</h5>
-        <div class="row">
-          <div class="location col-sm-6 col">
-            <span class="glyphicon glyphicon-map-marker"></span>
-            <h5><strong>Our Location:</strong></h5>
-            <p>123 SW 6th and Stark St</p>
-            <p>Portland, OR 97225</p>
-            <p>(503)-547-1234</p>
+        <div id="output">
+          <h3>Thank you for your order, <span id="add-name"></span>!</h3>
+          <h3>Your total is $<span id="price"></span></h3>
+          <div id="delivery-option">
+            <h5>We offer free delivery. Would you like us to deliver to you?</h5><button class="btn btn-success" id="yes-deliver" type="button">Yes, please deliver!</button> <button class="btn btn-danger" id="no-deliver" type="button">No, thank you.</button>
           </div>
         </div>
-      </div>
-      <div id="delivery">
-        <h5>Your order will be delivered to the following address:</h5>
-        <p id="push-address"></p>
-        <div class="message">
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          <h5>Please allow 45-60 minutes for delivery.</h5>
-          <h5>We appreciate your patience!</h5>
+        <form id="address" name="address">
+          <h4>Enter delivery address information:</h4>
+          <div class="form-group">
+            <label for="street">Street:</label> <input class="form-control" id="street" type="text">
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label> <input class="form-control" id="city" type="text">
+          </div>
+          <div class="form-group">
+            <label for="state">State:</label> <input class="form-control" id="state" type="text">
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Zipcode:</label> <input class="form-control" id="zipcode" type="number">
+          </div>
+          <div class="button-div">
+            <button class="btn btn-primary" name="button" type="submit">Submit</button>
+          </div>
+        </form>
+        <div id="pick-up">
+          <h5>Your order will be ready in 30 minutes. We look forward to seeing you!</h5>
+          <div class="row">
+            <div class="location col-sm-6 col">
+              <span class="glyphicon glyphicon-map-marker"></span>
+              <h5><strong>Our Location:</strong></h5>
+              <p>123 SW 6th and Stark St</p>
+              <p>Portland, OR 97225</p>
+              <p>(503)-547-1234</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <br>
-      <div id="new-order-button">
-        <button class="btn btn-primary btn-lg" id="new-order" type="button">Place another order</button>
-      </div>
+        <div id="delivery">
+          <h5>Your order will be delivered to the following address:</h5>
+          <p id="push-address"></p>
+          <div class="message">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <h5>Please allow 45-60 minutes for delivery.</h5>
+            <h5>We appreciate your patience!</h5>
+          </div>
+        </div><br>
+        <div id="new-order-button">
+          <button class="btn btn-primary btn-lg" id="new-order" type="button">Place another order</button>
+        </div>
+      </div><img alt="pizza guy" src="img/pizza.png"></div>
     </div>
-    <img src="img/pizza.png" alt="pizza guy"/>
-  </div>
-</div>
-
   </body>
 </html>
