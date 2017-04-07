@@ -12,7 +12,9 @@
   </head>
   <body>
     <div class="jumbotron">
+      <h1> Pepe's Pizzaria </h1>
     </div>
+
     <!-- begin class container -->
     <div class="container">
     <!-- begin row -->
@@ -87,5 +89,70 @@
       <!-- end of container -->
     </div>
 
+
+    <div id="output">
+        <h3>Thank you for your order, <span id="insert-name"></span>!</h3>
+        <h3>Your total is $<span id="price"></span></h3>
+        <div id="delivery-option">
+          <h5>We offer free delivery. Would you like us to deliver to you?</h5>
+          <button class="btn btn-success" type="button" id="yes-deliver">Yes, please deliver!</button>
+          <button class="btn btn-danger" type="button" id="no-deliver">No, thank you.</button>
+        </div>
+      </div>
+      <form id="address">
+        <h4>Enter delivery address information:</h4>
+        <div class="form-group">
+          <label for="street">Street:</label>
+          <input id="street" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input id="city" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input id="state" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="zipcode">Zipcode:</label>
+          <input id="zipcode" type="number" class="form-control">
+        </div>
+        <div class="button-div">
+          <button class="btn btn-primary" type="submit" name="button">Submit</button>
+        </div>
+      </form>
+      <div id="pick-up">
+        <h5>Your order will be ready in 30 minutes. We look forward to seeing you!</h5>
+        <div class="row">
+          <div class="location col-sm-6 col-sm-offset-3">
+            <span class="glyphicon glyphicon-map-marker"></span>
+            <h5><strong>Our Location:</strong></h5>
+            <p>123 SW 6th and Stark St</p>
+            <p>Portland, OR 97225</p>
+            <p>(503)547-1234</p>
+          </div>
+        </div>
+      </div>
+      <div id="delivery">
+        <h5>Your order will be delivered to the following address:</h5>
+        <p id="insert-address"></p>
+        <div class="message">
+          <h5>Please allow 45-60 minutes for delivery.</h5>
+          <h5>We appreciate your patience!</h5>
+        </div>
+      </div>
+      <div id="new-order-button">
+        <button class="btn btn-primary btn-lg" id="new-order" type="button">Place another order</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="footer">
+   <ul>
+     <li>&copy; Sowmya Dinavahi</li>
+     <li>For Epicodus Independent Project</li>
+     <h4>Pizza order <span class="copyright">&reg;</span></h4>
+   </ul>
+ </div> -->
   </body>
 </html>

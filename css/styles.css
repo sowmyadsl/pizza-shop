@@ -1,0 +1,23 @@
+.jumbotron {
+	height: 50vh;
+	text-align: right;
+	font-family: 'Josefin Slab', serif;
+	padding: 255px;
+	background-image: url("../img/pizza-banner.png");
+	background-size: cover;
+	font-size: 22px;
+  font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 3em;
+	-webkit-text-fill-color: black;
+	text-shadow: -1px 0 white, 0 2px white, 2px 0 white, 0 -1px white;
+}
+
+#order,#output,#delivery,#address,#pick-up,#new-order-button{
+  display:none;
+}
+
+li{
+  list-style: none;
+}
