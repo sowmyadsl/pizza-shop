@@ -17,9 +17,9 @@ function Order(name,number){
   this.pizzas= [];
 }
 
-Order.prototype.totalprice = function(){
-  var totalprice  = this.pizzas;
-}
+// Order.prototype.totalprice = function(){
+//   var totalprice  = this.pizzas;
+// }
 
 
 //UserInterface Logic
@@ -70,6 +70,7 @@ $(document).ready(function(){
                                  '</select>' +
                                '</div>' +
                              '</div>');
+
    });
 
 
@@ -78,31 +79,31 @@ $(document).ready(function(){
     var inputName = $("#name").val();
     var inputNumber = $("#number").val();
     var newOrder = new Order(inputName,inputNumber);
-
-    $(".new-order").each(function() {
-    var topping1 = parseFloat($(this).find(".topping1").val());
-    var topping2 = parseFloat($(this).find(".topping2").val());
-    var topping3 = parseFloat($(this).find(".topping3").val());
-    var size = parseFloat($(this).find(".size").val());
-    var newPizza = new Pizza(topping1, topping2, topping3, size);
-    console.log(newOrder.pizzas.push(newPizza));
-    });
-
-    // var topping1 = parseFloat($(".topping1").val());
-    // var topping2 = parseFloat($(".topping2").val());
-    // var topping3 = parseFloat($(".topping3").val());
-    // var size = parseFloat($(".size").val());
     //
-    // var pizza = new Pizza(topping1,topping2,topping3,size);
+    // $(".new-order").each(function() {
+    // var topping1 = parseFloat($(this).find(".topping1").val());
+    // var topping2 = parseFloat($(this).find(".topping2").val());
+    // var topping3 = parseFloat($(this).find(".topping3").val());
+    // var size = parseFloat($(this).find(".size").val());
+    // var newPizza = new Pizza(topping1, topping2, topping3, size);
+    // console.log(newOrder.pizzas.push(newPizza));
+    // });
+    //
+    var topping1 = parseFloat($(".topping1").val());
+    var topping2 = parseFloat($(".topping2").val());
+    var topping3 = parseFloat($(".topping3").val());
+    var size = parseFloat($(".size").val());
+    var pizza = new Pizza(topping1,topping2,topping3,size);
 
 
-    $("#insert-name").text(newOrder.name);
-    $("#price").text(newPizza.totalprice());
+    $("#add-name").text(newOrder.name);
+    $("#price").text(pizza.price());
     $("#output, #delivery-option").show();
     $("#order").show();
 
   });
 
+  
   $("#yes-deliver").click(function(){
     $("#output, #delivery-option").hide();
     $("#address").show();
@@ -115,8 +116,8 @@ $(document).ready(function(){
     var inputCity = $("#city").val();
     var inputState = $("#state").val();
     var inputZipcode = $("#zipcode").val();
-    var address = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
-    $("#insert-address").text(address);
+    var inputAddress = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
+    $("#push-address").text(inputAddress);
     $("#delivery").show();
     $("#address").hide();
   });
