@@ -29,7 +29,7 @@ A Pizza ordering Web Application that lets the user input name,phone number and 
 
 ## Known Bugs
 
-No known bugs as of now.
+The new order keeps showing up on all pages. I will work on removing that in future.
 
 ## Support and contact details
 

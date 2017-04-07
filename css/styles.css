@@ -10,8 +10,8 @@
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	line-height: 3em;
-	-webkit-text-fill-color: black;
-	text-shadow: -1px 0 black, 0 2px white, 2px 0 white, 0 -1px white;
+	-webkit-text-fill-color: #DBFF33;
+	text-shadow: -1px 0 black, 0 2px black, 2px 0 white, 0 -1px white;
 }
 #order, #output, #delivery, #address, #pick-up, #new-order-button {
 	display: none;
