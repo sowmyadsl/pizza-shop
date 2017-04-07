@@ -5,13 +5,13 @@
 	padding: 255px;
 	background-image: url("../img/pizza-banner.png");
 	background-size: cover;
-	font-size: 22px;
+	font-size: 54px;
   font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	line-height: 3em;
 	-webkit-text-fill-color: black;
-	text-shadow: -1px 0 white, 0 2px white, 2px 0 white, 0 -1px white;
+	text-shadow: -1px 0 black, 0 2px white, 2px 0 white, 0 -1px white;
 }
 
 
@@ -22,7 +22,6 @@
 li{
   list-style: none;
 }
-/*.footer{
-  text-align: right;
-  text-underline-position: below;
-}*/
+.glyphicon{
+  font-size: 34px;
+}
