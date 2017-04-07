@@ -17,6 +17,14 @@ function Order(name,number){
   this.pizzas= [];
 }
 
+function resetFields() {
+    $("#name").val("");
+    $("#number").val("");
+    $(".topping1").val("");
+    $(".topping2").val("");
+    $(".topping3").val("");
+    $(".size").val("");
+}
 
 //UserInterface Logic
 $(document).ready(function(){
@@ -90,6 +98,7 @@ $(document).ready(function(){
     $("#output, #delivery-option").show();
     $("#order").show();
 
+
    });
 
 
@@ -109,8 +118,11 @@ $(document).ready(function(){
     var inputZipcode = $("#zipcode").val();
     var inputAddress = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
     $("#push-address").text(inputAddress);
+      $("h1").replaceWith("<h1>Delivery Confirmation</h1>");
     $("#delivery").show();
     $("#address").hide();
+    resetFields();
+    $("#pick-up").hide();
     $("#new-order-button").show();
   });
 
@@ -120,10 +132,10 @@ $(document).ready(function(){
   });
 
   $("#new-order").click(function(event){
-     $("#order").reset();
-     $("#address").reset();
-     $("#output, #pick-up, #delivery, #new-order-button").hide();
-     $("#order").show();
+      resetFields();
+    $("#orderform").show();
+    $("#output,#pick-up").hide();
+
    });
 
   });
