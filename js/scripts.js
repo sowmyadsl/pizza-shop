@@ -24,6 +24,10 @@ function resetFields() {
     $(".topping2").val("");
     $(".topping3").val("");
     $(".size").val("");
+    $("#street").val("");
+    $("#city").val("");
+    $("#state").val("");
+    $("#zipcode").val("");
 }
 
 //UserInterface Logic
@@ -94,48 +98,43 @@ $(document).ready(function(){
     $("#add-name").text(newOrder.name);
     $("#price").text(pizza.price());
     $("#orderform").hide();
-    $("h1").replaceWith("<h1>Order Confirmation</h1>");
     $("#output, #delivery-option").show();
     $("#order").show();
-
 
    });
 
 
   $("#yes-deliver").click(function(){
-    $("#output, #delivery-option").hide();
-    $("h1").replaceWith("<h1>Address Information</h1>");
+    $(" #delivery-option").hide();
     $("#address").show();
-
-
   });
 
-  $("#address").submit(function(event){
+  $("form#address").submit(function(event){
     event.preventDefault();
     var inputStreet = $("#street").val();
     var inputCity = $("#city").val();
     var inputState = $("#state").val();
     var inputZipcode = $("#zipcode").val();
     var inputAddress = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
-    $("#push-address").text(inputAddress);
-      $("h1").replaceWith("<h1>Delivery Confirmation</h1>");
-    $("#delivery").show();
     $("#address").hide();
-    resetFields();
-    $("#pick-up").hide();
+    $("#push-address").text(inputAddress);
+    $("#delivery").show();
     $("#new-order-button").show();
   });
 
+
   $("button#no-deliver").click(function(){
     $("#delivery-option").hide();
-     $("#pick-up, #new-order-button").show();
+     $("#pick-up").show();
+     $("#new-order-button").show();
   });
 
-  $("#new-order").click(function(event){
-      resetFields();
+  $("#new-order-button").click(function(event){
+    resetFields();
     $("#orderform").show();
-    $("#output,#pick-up").hide();
+    $("#delivery,#pick-up,#output").hide();
 
    });
 
+   $("#new-order-button").hide();
   });

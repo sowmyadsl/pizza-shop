@@ -25,3 +25,14 @@ li{
 .glyphicon{
   font-size: 34px;
 }
+
+body{
+  background-color: #BFBDC1;
+}
+
+img {
+  position: fixed;
+  width: 400px;
+  bottom: 0;
+  right: 0;
+}
