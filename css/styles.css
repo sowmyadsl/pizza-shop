@@ -1,33 +1,38 @@
-.jumbotron {
-	height: 50vh;
-	text-align: right;
-	font-family: 'Josefin Slab', serif;
-	padding: 255px;
-	background-image: url("../img/pizza-banner.png");
-	background-size: cover;
-	font-size: 54px;
-	font-weight: 400;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	line-height: 3em;
-	-webkit-text-fill-color: #DBFF33;
-	text-shadow: -1px 0 black, 0 2px black, 2px 0 white, 0 -1px white;
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+
 }
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+.footer{
+	 right: 0;
+	 bottom: 0;
+}
+
 #order, #output, #delivery, #address, #pick-up, #new-order-button {
 	display: none;
 }
-li {
-	list-style: none;
+body{
+	font-family: 'josefin Sans',sans-serif;
+	font-size: 23px;
+}
+h3,h4{
+	font-family: 'josefin Sans',sans-serif;
+	font-size: 23px;
+
 }
 .glyphicon {
 	font-size: 34px;
 }
-body {
-	background-color: #BFBDC1;
-}
-img {
-	position: fixed;
-	width: 280px;
-	bottom: 0;
-	right: 0;
+
+@media (max-width: 700px) {
+  .container {
+    margin-bottom: 100px;
+  }
 }

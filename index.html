@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <script src="js/jquery-3.2.0.js">
   </script>
   <script src="js/scripts.js">
@@ -11,16 +12,18 @@
   <title>Pizza Order Form</title>
 </head>
 <body>
-  <div id="jumbotron">
-    <h1> Pizza Order form </h1>
-  </div>
+  <div class="header">
+  <img src="img/pizza1.png" alt="logo" />
+  <h1>Pizza Order Form</h1>
+</div>
+<br>
   <!--begin class container-->
   <div class="container">
     <!-- begin row -->
     <div class="row">
       <!--begin column-->
       <div class="column col-sm-8 col-sm-offset-2">
-        <h1>Order a Pizza</h1>
+        <h1>Welcome!!</h1>
         <form id="orderForm">
           <h4>Contact Information:</h4>
           <div class="form-group">
@@ -33,7 +36,7 @@
           </div>
           <div class="new-order">
             <div class="form-group">
-              <h4> Please Choose any of the following toppings :</h4>
+              <h4> <em>Please Choose any of the following toppings :</em></h4>
               <input type="checkbox" name="toppings" value=1.25>Onions<br>
               <input type="checkbox" name="toppings" value=1.25>Tomatoes <br>
               <input type="checkbox" name="toppings" value=1.25>Red Peppers<br>
@@ -114,10 +117,13 @@
         <h5>We appreciate your patience!</h5>
       </div>
     </div><br>
+    <hr>
     <!-- div for new order button -->
     <div id="new-order-button">
       <button class="btn btn-primary btn-lg" id="new-order" type="button">Place another order</button>
     </div>
+    <div class="footer">
+      <img src="img/pizza.png" alt="photo of pizza delivery guy">
   </div>
 </body>
 </html>
