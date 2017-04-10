@@ -1,157 +1,149 @@
-//Business Logic
-function AddPizza(topping1,topping2,topping3,size){
-  this.topping1 = topping1;
-  this.topping2 = topping2;
-  this.topping3 = topping3;
+//******business-logic
+
+//order object to store customer name and phone number
+function Order(customerName,customerPhoneNumber){
+  this.name=customerName;
+  this.number=customerPhoneNumber;
+}
+
+//pizza object to store selected toppings price and size of the pizza
+function Pizza(toppingsPrice,size){
+  this.toppingsPrice = toppingsPrice;
   this.size = size;
 }
 
-AddPizza.prototype.price = function () {
-  return this.topping1 + this.topping2 + this.topping3 + this.size;
+//method to calculate price of each pizza
+Pizza.prototype.price = function () {
+  return this.toppingsPrice + this.size;
 };
 
-
-function Order(name,number){
-  this.name = name;
-  this.number = number;
-  this.pizzas=[];
-
-}
-
-function totalPrice(){
-  var newPrice = this.pizzas;
-}
-
+//function to reset all fields
 function resetFields() {
   $("#name").val("");
   $("#number").val("");
-  $(".topping1").val("");
-  $(".topping2").val("");
-  $(".topping3").val("");
-  $(".size").val("");
+   $(".new-order :checked").prop("checked", false);
+  $('select').prop('selectedIndex', 0);
   $("#street").val("");
   $("#city").val("");
   $("#state").val("");
   $("#zipcode").val("");
 }
 
-//UserInterface Logic
+//*************UI logic **************************//
 $(document).ready(function(){
+  //lets customer add another form to order pizza
   $("#add-button").click(function(){
-    $("#add-order").append('<div class="new-order">' +
-    '<h4>Choose up to 3 toppings:</h4>' +
+    //adds another DOM element to the existing order
+    $("#add-order").append('<div class="new-order">'+
+    '<div class="form-group">'+
+    '<h4> Please Choose any of the following toppings :</h4>'+
+    '<input type="checkbox" name="toppings" value=1.25>Onions<br>'+
+    '<input type="checkbox" name="toppings" value=1.25>Tomatoes <br>'+
+    '<input type="checkbox" name="toppings" value=1.25>Red Peppers<br>' +
+    '<input type="checkbox" name="toppings" value=1.25>Mushrooms<br>' +
+    '<input type="checkbox" name="toppings" value=1.25>Spinach<br>'+
+    '<input type="checkbox" name="toppings" value=1.25>Artichokes<br>' +
+    '<input type="checkbox" name="toppings" value=1.25>Cheese' +
+    '</div>'+
+    '<br>'+
     '<div class="form-group">' +
-    '<label for="toppings"><em>Topping 1:</em></label>' +
-    '<select class="form-control topping1">' +
-    '<option selected="true" value="0">Please select one:</option>' +
-    '<option value="1">Cheese</option>' +
-    '<option value="1.5">Onions</option>' +
-    '<option value="1.75">Olives</option>' +
-    '<option value="1.25">Mushrooms</option>' +
-    '<option value="2">Artichokes</option>' +
-    '</select>' +
-    '</div>' +
-    '<div class="form-group">' +
-    '<label for="toppings"><em>Topping 2:</em></label>' +
-    '<select class="form-control topping2">' +
-    '<option selected="true" value="0">Please select one:</option>' +
-    '<option value="1">Cheese</option>' +
-    '<option value="1.5">Onions</option>' +
-    '<option value="1.75">Tomatoes</option>' +
-    '<option value="1.25">Mushrooms</option>' +
-    '<option value="2">Artichokes</option>' +
-    '</select>' +
-    '</div>' +
-    '<div class="form-group">' +
-    '<label for="toppings"><em>Topping 3:</em></label>' +
-    '<select class="form-control topping3">' +
-    '<option selected="true" value="0">Please select one:</option>' +
-    '<option value="1">Cheese</option>' +
-    '<option value="1.5">Onions</option>' +
-    '<option value="1.75">Olives</option>' +
-    '<option value="1.25">Red peppers</option>' +
-    '<option value="2">Artichokes</option>' +
-    '</select>' +
-    '</div>' +
-    '<h4>Choose a size:</h4>' +
-    '<div class="form-group">' +
-    '<select class="form-control size">' +
-    '<option selected="true" value="0">Please select one:</option>' +
-    '<option value="5">Small</option>' +
-    '<option value="10">Medium</option>' +
-    '<option value="15">Large</option>' +
-    '</select>' +
-    '</div>' +
+    '<label for="size">Select size of the pizza:</label>' +
+    '<select class="form-control" id="size">'+
+    '<option disabled selected="true" value="">Pick a size</option>'+
+    '<option value="5">8 inch (S)</option>'+
+    '<option value="10">12 inch (M)</option>'+
+    '<option value="15">14 inch (L)</option>'+
+    '</select>'+
+    '</div>'+
     '</div>');
+});
 
+//submits the order form
+$("#orderForm").submit(function(event){
+  event.preventDefault();
+  var inputName = $("#name").val();
+  var inputNumber = $("#number").val();
+  var totalPrice = 0;
+  var newOrder = new Order(inputName,inputNumber)
 
-  });
-
-  $("#orderform").submit(function(event){
-    event.preventDefault();
-    var inputName = $("#name").val();
-    var inputNumber = $("#number").val();
-    var newOrder = new Order(inputName,inputNumber);
-
-  //   $(".new-order").each(function() {
-  //    var inputtedTopping1 = $(this).find(".topping1").val();
-  //    var inputtedTopping2 = $(this).find(".topping2").val();
-  //    var inputtedTopping3 = $(this).find(".topping3").val();
-  //    var inputtedSize = $(this).find(".size").val();
-  //    var addAnotherpizza = new AddPizza(inputtedTopping1,inputtedTopping2,inputtedTopping3,inputtedSize)
-  //   newOrder.pizzas.push(AddPizza)
-  //  });
-
-
-
-    var topping1 = parseFloat($(".topping1").val());
-    var topping2 = parseFloat($(".topping2").val());
-    var topping3 = parseFloat($(".topping3").val());
-    var size = parseFloat($(".size").val());
-    var pizza = new Pizza(topping1,topping2,topping3,size);
-
-
-    $("#add-name").text(newOrder.name);
-    $("#price").text(AddPizza.price());
-    $("#orderform").hide();
-    $("#output, #delivery-option").show();
-    $("#order").show();
+//function for each pizza order
+  $(".new-order").each(function(){
+    //initializing toppingsPrice value to 0 for every new pizza order
+    var toppingsPrice = 0;
+    //for specific dom element finds each checkbox that is checked
+    $(this).find("input:checkbox[name=toppings]:checked").each(function(){
+      //updating toppingsPrice for the checked topping.
+      toppingsPrice += parseFloat($(this).val());
+    });
+    //obtaining the value of the selected pizza size in the current order
+    var inputSize = parseFloat($(this).find("#size").val());
+    //create a object pizza to store toppingsPrice and size.
+    var pizzaOrder = new Pizza(toppingsPrice,inputSize);
+    //invokes to calculate the finalprice of the pizza ordered.
+    totalPrice += pizzaOrder.price();
 
   });
-
-
-  $("#yes-deliver").click(function(){
-    $(" #delivery-option").hide();
-    $("#address").show();
-  });
-
-  $("form#address").submit(function(event){
-    event.preventDefault();
-    var inputStreet = $("#street").val();
-    var inputCity = $("#city").val();
-    var inputState = $("#state").val();
-    var inputZipcode = $("#zipcode").val();
-    var inputAddress = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
-    $("#address").hide();
-    $("#push-address").text(inputAddress);
-    $("#delivery").show();
-    $("#new-order-button").show();
-  });
-
-
-  $("button#no-deliver").click(function(){
-    $("#delivery-option").hide();
-    $("#pick-up").show();
-    $("#new-order-button").show();
-  });
-
-  $("#new-order-button").click(function(){
-    resetFields();
-    $("#orderform").show();
-    $("#delivery,#pick-up,#output").hide();
-    $("#new-order-button").hide();
-
-  });
-
+  $("#add-name").text(newOrder.name);
+//prints the price of the order
+$("#price").append(totalPrice);
+//hides the form
+$("#orderForm").hide();
+$("#output,#delivery-option").show();
+$("#order").show();
 
 });
+
+//function when customer clicks on yes for delivery
+$("#yes-deliver").click(function(){
+  //hides the delivery-option
+  $(" #delivery-option").hide();
+  //shows the address form
+  $("#address").show();
+});
+
+//function when customer clicks on submit button
+$("form#address").submit(function(event){
+  event.preventDefault();
+  var inputStreet = $("#street").val();
+  var inputCity = $("#city").val();
+  var inputState = $("#state").val();
+  var inputZipcode = $("#zipcode").val();
+  var inputAddress = (inputStreet + "," + inputCity + "," + inputState + "," + inputZipcode).toUpperCase();
+  $("#address").hide();
+  $("#push-address").text(inputAddress);
+  $("#delivery").show();
+  $("#new-order-button").show();
+});
+
+//function when customer clicks on no-deliver button
+$("button#no-deliver").click(function(){
+  $("#delivery-option").hide();
+  $("#pick-up").show();
+  $("#new-order-button").show();
+});
+
+//function when customer wants to add a new order
+$("#new-order-button").click(function(){
+  //reset all fields
+  resetFields();
+  //show new form
+  $("#orderForm").show();
+  //hides all other fields
+  $("#delivery,#pick-up,#output").hide();
+  //hide the new order button
+  $("#new-order-button").hide();
+
+ // I didnt know any other way to remove multiple dom elements of new order class so i ran a counter and removed everything except first instance.
+  var counter = 1;
+  $(".new-order").each(function(){
+    if (counter === 1){
+      //do nothing
+    }else {
+      $(this).last().remove();
+    }
+    counter+=1;
+  });
+
+}); // closes the new-order-button function
+
+ }); //close document
