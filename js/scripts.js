@@ -1,12 +1,12 @@
 //Business Logic
-function Pizza(topping1,topping2,topping3,size){
+function AddPizza(topping1,topping2,topping3,size){
   this.topping1 = topping1;
   this.topping2 = topping2;
   this.topping3 = topping3;
   this.size = size;
 }
 
-Pizza.prototype.price = function () {
+AddPizza.prototype.price = function () {
   return this.topping1 + this.topping2 + this.topping3 + this.size;
 };
 
@@ -14,7 +14,12 @@ Pizza.prototype.price = function () {
 function Order(name,number){
   this.name = name;
   this.number = number;
-  this.pizzas= [];
+  this.pizzas=[];
+
+}
+
+function totalPrice(){
+  var newPrice = this.pizzas;
 }
 
 function resetFields() {
@@ -78,6 +83,8 @@ $(document).ready(function(){
     '</select>' +
     '</div>' +
     '</div>');
+
+
   });
 
   $("#orderform").submit(function(event){
@@ -85,6 +92,17 @@ $(document).ready(function(){
     var inputName = $("#name").val();
     var inputNumber = $("#number").val();
     var newOrder = new Order(inputName,inputNumber);
+
+  //   $(".new-order").each(function() {
+  //    var inputtedTopping1 = $(this).find(".topping1").val();
+  //    var inputtedTopping2 = $(this).find(".topping2").val();
+  //    var inputtedTopping3 = $(this).find(".topping3").val();
+  //    var inputtedSize = $(this).find(".size").val();
+  //    var addAnotherpizza = new AddPizza(inputtedTopping1,inputtedTopping2,inputtedTopping3,inputtedSize)
+  //   newOrder.pizzas.push(AddPizza)
+  //  });
+
+
 
     var topping1 = parseFloat($(".topping1").val());
     var topping2 = parseFloat($(".topping2").val());
@@ -94,7 +112,7 @@ $(document).ready(function(){
 
 
     $("#add-name").text(newOrder.name);
-    $("#price").text(pizza.price());
+    $("#price").text(AddPizza.price());
     $("#orderform").hide();
     $("#output, #delivery-option").show();
     $("#order").show();
@@ -127,12 +145,13 @@ $(document).ready(function(){
     $("#new-order-button").show();
   });
 
-  $("#new-order-button").click(function(event){
+  $("#new-order-button").click(function(){
     resetFields();
     $("#orderform").show();
     $("#delivery,#pick-up,#output").hide();
+    $("#new-order-button").hide();
 
   });
 
-  $("#new-order-button").hide();
+
 });
