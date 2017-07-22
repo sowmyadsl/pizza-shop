@@ -10,9 +10,10 @@ A Pizza ordering Web Application that lets the user input name,phone number and 
 
 ## Landing Page
 
-![]()
+![](img/contact-form.gif)
 
 ## Working GIF
+
 
 ## Specifications
 
