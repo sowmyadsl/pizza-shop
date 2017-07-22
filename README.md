@@ -8,6 +8,12 @@
 
 A Pizza ordering Web Application that lets the user input name,phone number and choose a set of toppings and size of the pizza and prints the cost for their order and gives an option for user to pick up or deliver using javascript and jquery.
 
+## Landing Page
+
+![]()
+
+## Working GIF
+
 ## Specifications
 
 
